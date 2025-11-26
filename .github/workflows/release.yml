@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - "v0.1.0"   # 如 v1.0.0, v0.1.0
+      - "v0.2.0"   # 如 v1.0.0, v0.1.0
 
 jobs:
   build:

@@ -23,3 +23,18 @@ describe('GET /sum', () => {
   });
 });
 
+// 新增：/multiply 的测试
+describe('GET /multiply', () => {
+  it('should return product of a and b', async () => {
+    const res = await request(app).get('/multiply?a=2&b=3');
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual({ result: 6 });
+  });
+
+  it('should return 400 for invalid params', async () => {
+    const res = await request(app).get('/multiply?a=bar&b=3');
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toHaveProperty('error');
+  });
+});
+
